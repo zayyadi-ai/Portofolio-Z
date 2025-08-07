@@ -1,0 +1,247 @@
+/* VARIABEL WARNA & FONT */
+:root {
+    --bg-color: #121212;
+    --text-color: #EAEAEA;
+    --primary-color: #BB86FC;
+    --secondary-color: #03DAC6;
+    --surface-color: #1E1E1E;
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* PENGATURAN DASAR & RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word; /* === PERBAIKAN: Memaksa teks pindah baris === */
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden; /* === PERBAIKAN UTAMA: Mencegah scroll horizontal === */
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: white;
+}
+section {
+    padding: 4rem 0;
+}
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* ===== HERO SECTION ===== */
+#hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 80vh;
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--surface-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.hero-text {
+    text-align: left;
+}
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0 1rem;
+}
+.hero-description {
+    max-width: 500px;
+    margin: 0 0 2rem 0;
+    font-size: 1.1rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-button:hover {
+    transform: translateY(-5px);
+    background-color: white;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+.about-text {
+    flex-basis: 60%;
+}
+.about-skills {
+    flex-basis: 40%;
+}
+.about-skills h3 {
+    margin-bottom: 1rem;
+}
+.about-skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.about-skills li {
+    background-color: var(--surface-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+}
+
+/* ===== PROJECTS SECTION ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.project-card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2a2a2a;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.project-card h3 {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem 0.5rem;
+}
+.project-card p {
+    padding: 0 1.5rem;
+    color: #a0a0a0;
+}
+.tags {
+    padding: 1rem 1.5rem 1.5rem;
+}
+.tags span {
+    display: inline-block;
+    background-color: #333;
+    color: #ccc;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* ===== CONTACT SECTION ===== */
+#contact {
+    text-align: center;
+}
+.social-links {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+.copyright {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* =================================
+   ATURAN RESPONSIVE (MEDIA QUERY)
+   ================================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 3rem 1.5rem;
+    }
+    section {
+        padding: 3rem 0;
+    }
+
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .hero-description {
+        margin: 0 auto 2rem;
+        font-size: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 2rem; /* === PERBAIKAN: Menyesuaikan jarak di mobile === */
+    }
+    .about-text, .about-skills {
+        flex-basis: 100%;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+}
